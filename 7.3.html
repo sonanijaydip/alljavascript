@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<script type="text/javascript">
+		var s1=30,s2=95,s3=99,s4=98,s5=92,cnt=0,total,per,min,max;
+		document.write("<br>s1="+s1)
+		document.write("<br>s2="+s2)
+		document.write("<br>s3="+s3)
+		document.write("<br>s4="+s4)
+		document.write("<br>s5="+s5)
+
+		total=s1+s2+s3+s4+s5;
+		document.write("<br>total="+total)
+		per=total/5;
+		document.write("<br>per="+per)
+
+		if(s1>s2 && s1>s3 && s1>s4 && s1>s5)
+		{
+			max=s1;
+		}
+		else if(s2>s3 && s2>s4 && s2>s5)
+		{
+			max=s2;
+		}
+		else if(s3>s4 && s3>s5)
+		{
+			max=s3;
+		}
+		else if(s4>s5)
+		{
+			max=s4;
+		}
+		else
+		{
+			max=s5;
+		}
+		document.write("<br>max="+max)
+
+
+		if(s1<s2 && s1<s3 && s1<s4 && s1<s5)
+		{
+			min=s1;
+		}
+		else if(s2<s3 && s2<s4 && s2<s5)
+		{
+			min=s2;
+		}
+		else if(s3<s4 && s3<s5)
+		{
+			min=s3;
+		}
+		else if(s4<s5)
+		{
+			min=s4;
+		}
+		else
+		{
+			min=s5;
+		}
+		document.write("<br>min="+min)
+
+
+		if(per>90)
+		{
+			document.write("<br>grade=A1")
+		}
+		else if(per>80)
+		{
+			document.write("<br>grade=A")
+		}
+		else if(per>70)
+		{
+			document.write("<br>grade=B")
+		}
+		else if(per>50)
+		{
+			document.write("<br>grade=C")
+		}
+		else
+		{
+			document.write("<br>grade=D")
+		}
+
+		// if(per>35)
+		// {
+		// 	document.write("<br>result=pass")
+		// }
+		// else
+		// {
+		// 	document.write("<br>result=fail")
+		// }
+
+		if(s1<35)
+		{
+			cnt++;
+		}
+		else if(s2<35)
+		{
+			cnt++;
+		}
+		else if(S3<35)
+		{
+			cnt++;
+		}
+		else if(s4<35)
+		{
+			cnt++;
+		}
+		else
+		{
+			cnt++;
+		}
+
+		if(cnt==0)
+		{
+			document.write("<br>result=pass")
+		}
+		else if(cnt<=2)
+		{
+			document.write("<br>result=atkt")
+		}
+		else
+		{
+			document.write("<br>result=fail")
+		}
+
+
+
+
+
+	</script>
+</head>
+<body>
+
+</body>
+</html>

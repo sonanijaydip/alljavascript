@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Puzzel</title>
+	<style type="text/css">
+
+		.container {
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		body {
+			background-color: lightgray !important;
+		}
+
+		.head {
+			text-align: center;
+			margin-left: auto;
+			margin-right: auto;
+		}
+		.tictac {
+			
+			display: flex;
+			flex-wrap: wrap;
+			height: 150px;
+			width: 150px;
+			margin-left: auto;
+			margin-right: auto;
+			margin-top: auto;
+			margin-bottom: auto;
+		}
+
+		h5 {
+			margin-bottom: 0;
+/*			text-align: left;*/
+		}
+
+		#text {
+			margin: auto;
+			background-color: azure;
+			width: 150px;
+			height: 30px;
+			text-align: center;
+			padding-top: 5px;
+		}
+
+		.btn {
+			font-size: 24px;
+			font-style: inherit;
+			height: 50px;
+			width: 50px;
+		}
+
+		#reset{
+			border: 1px solid darkgray;
+			background-color: darkgray;
+			color: white;
+			height: 30px;
+			width: 80px;
+			margin: auto;
+
+		}
+		.btnn {
+			margin: 15px;
+			text-align: center;
+		}
+
+	</style>
+
+	<script type="text/javascript">
+
+		function btn1() {
+			
+			var val1 = document.getElementById('b1').value;
+			var val2 = document.getElementById('b2').value;
+			var val4 = document.getElementById('b4').value;
+			
+			if (val2 == ' ') 
+			{
+				document.getElementById('b2').value = val1;
+				document.getElementById('b1').value = ' ';
+			}
+
+			if (val4 == ' ') 
+			{
+				document.getElementById('b4').value = val1;
+				document.getElementById('b1').value = ' ';
+			}
+			winner();
+
+		}
+		
+		function btn2() {
+			var val2 = document.getElementById('b2').value;
+			var val1 = document.getElementById('b1').value;
+			var val3 = document.getElementById('b3').value;
+			var val5 = document.getElementById('b5').value;
+
+			if (val1 == ' ') 
+			{
+				document.getElementById('b1').value = val2;
+				document.getElementById('b2').value = ' ';
+			}
+
+			if (val3 == ' ') 
+			{
+				document.getElementById('b3').value = val2;
+				document.getElementById('b2').value = ' ';
+			}
+
+			if (val5 == ' ') 
+			{
+				document.getElementById('b5').value = val2;
+				document.getElementById('b2').value = ' ';
+			}
+			winner();
+
+		}
+
+		function btn3() {
+			var val3 = document.getElementById('b3').value;
+			var val2 = document.getElementById('b2').value;
+			var val6 = document.getElementById('b6').value;
+ 
+			if (val2 == ' ') 
+			{
+				document.getElementById('b2').value = val3;
+				document.getElementById('b3').value = ' ';
+			}
+
+			if (val6 == ' ') 
+			{
+				document.getElementById('b6').value = val3;
+				document.getElementById('b3').value = ' ';
+			}
+			winner();
+
+		}
+
+		function btn4() {
+			var val4 = document.getElementById('b4').value;
+			var val1 = document.getElementById('b1').value;
+			var val7 = document.getElementById('b7').value;
+			var val5 = document.getElementById('b5').value;
+
+			if (val1 == ' ') 
+			{
+				document.getElementById('b1').value = val4;
+				document.getElementById('b4').value = ' ';
+			}
+
+			if (val7 == ' ') 
+			{
+				document.getElementById('b7').value = val4;
+				document.getElementById('b4').value = ' ';
+			}
+
+			if (val5 == ' ') 
+			{
+				document.getElementById('b5').value = val4;
+				document.getElementById('b4').value = ' ';
+			}
+			winner();
+
+		}
+
+		function btn5() {
+			var val5 = document.getElementById('b5').value;
+			var val2 = document.getElementById('b2').value;
+			var val4 = document.getElementById('b4').value;
+			var val6 = document.getElementById('b6').value;
+			var val8 = document.getElementById('b8').value;
+
+			if (val2 == ' ') 
+			{
+				document.getElementById('b2').value = val5;
+				document.getElementById('b5').value = ' ';
+			}
+
+			if (val4 == ' ') 
+			{
+				document.getElementById('b4').value = val5;
+				document.getElementById('b5').value = ' ';
+			}
+
+			if (val6 == ' ') 
+			{
+				document.getElementById('b6').value = val5;
+				document.getElementById('b5').value = ' ';
+			}
+
+			if (val8 == ' ') 
+			{
+				document.getElementById('b8').value = val5;
+				document.getElementById('b5').value = ' ';
+			}
+			winner();
+
+		}
+
+		function btn6() {
+			var val6 = document.getElementById('b6').value;
+			var val3 = document.getElementById('b3').value;
+			var val5 = document.getElementById('b5').value;
+			var val9 = document.getElementById('b9').value;
+
+			if (val3 == ' ') 
+			{
+				document.getElementById('b3').value = val6;
+				document.getElementById('b6').value = ' ';
+			}
+
+			if (val5 == ' ') 
+			{
+				document.getElementById('b5').value = val6;
+				document.getElementById('b6').value = ' ';
+			}
+
+			if (val9 == ' ') 
+			{
+				document.getElementById('b9').value = val6;
+				document.getElementById('b6').value = ' ';
+			}
+			winner();
+
+		}
+
+		function btn7() {
+			var val7 = document.getElementById('b7').value;
+			var val4 = document.getElementById('b4').value;
+			var val8 = document.getElementById('b8').value;
+ 
+			if (val4 == ' ') 
+			{
+				document.getElementById('b4').value = val7;
+				document.getElementById('b7').value = ' ';
+			}
+
+			if (val8 == ' ') 
+			{
+				document.getElementById('b8').value = val7;
+				document.getElementById('b7').value = ' ';
+			}
+			winner();
+
+		}
+
+		function btn8() {
+			var val8 = document.getElementById('b8').value;
+			var val5 = document.getElementById('b5').value;
+			var val7 = document.getElementById('b7').value;
+			var val9 = document.getElementById('b9').value;
+
+			if (val5 == ' ') 
+			{
+				document.getElementById('b5').value = val8;
+				document.getElementById('b8').value = ' ';
+			}
+
+			if (val7 == ' ') 
+			{
+				document.getElementById('b7').value = val8;
+				document.getElementById('b8').value = ' ';
+			}
+
+			if (val9 == ' ') 
+			{
+				document.getElementById('b9').value = val8;
+				document.getElementById('b8').value = ' ';
+			}
+			winner();
+
+		}
+
+		function btn9() {
+			var val9 = document.getElementById('b9').value;
+			var val6 = document.getElementById('b6').value;
+			var val8 = document.getElementById('b8').value;
+ 
+			if (val6 == ' ') 
+			{
+				document.getElementById('b6').value = val9;
+				document.getElementById('b9').value = ' ';
+			}
+
+			if (val8 == ' ') 
+			{
+				document.getElementById('b8').value = val9;
+				document.getElementById('b9').value = ' ';
+			}
+			winner();
+
+		}
+
+		function reset() {
+			location.reload()
+		}
+
+		function winner() {
+			var v1,v2,v3,v4,v5,v6,v7,v8;
+			v1 = document.getElementById('b1').value;
+			v2 = document.getElementById('b2').value;
+			v3 = document.getElementById('b3').value;
+			v4 = document.getElementById('b4').value;
+			v5 = document.getElementById('b5').value;
+			v6 = document.getElementById('b6').value;
+			v7 = document.getElementById('b7').value;
+			v8 = document.getElementById('b8').value;
+
+			if (v1 == '1' && v2 == '2' && v3 == '3' &&
+				v4 == '4' && v5 == '5' && v6 == '6' &&
+				v7 == '7' && v8 == '8')
+			{
+				document.getElementById('text').innerHTML = "WIN THE MATCH"
+				document.getElementById('b1').disabled=true
+				document.getElementById('b2').disabled=true
+				document.getElementById('b3').disabled=true
+				document.getElementById('b4').disabled=true
+				document.getElementById('b5').disabled=true
+				document.getElementById('b6').disabled=true
+				document.getElementById('b7').disabled=true
+				document.getElementById('b8').disabled=true
+				document.getElementById('b9').disabled=true
+				// window.alert('win')
+			}
+
+		}
+
+	</script>
+
+</head>
+<body>
+
+	<div class="container">
+		
+		<h1 class="head">Slide Puzzle</h1>
+
+	<div>
+		<div class="tictac">
+		
+		<input type="button" class="btn btn1" id="b1" value="1" onclick="btn1(1);" name="">
+		<input type="button" class="btn btn2" id="b2" value="2" onclick="btn2(2);" name="">
+		<input type="button" class="btn btn3" id="b3" value="3" onclick="btn3(3);" name="">
+		<input type="button" class="btn btn4" id="b4" value="4" onclick="btn4(4);" name="">
+		<input type="button" class="btn btn5" id="b5" value="5" onclick="btn5(5);" name="">
+		<input type="button" class="btn btn6" id="b6" value="6" onclick="btn6(6);" name="">
+		<input type="button" class="btn btn7" id="b7" value="7" onclick="btn7(7);" name="">
+		<input type="button" class="btn btn8" id="b8" value=" " onclick="btn8(8);" name="">
+		<input type="button" class="btn btn9" id="b9" value="8" onclick="btn9(9);" name="">
+
+		</div>
+		<div class="btnn">
+			<input type="button" id="reset" onclick="reset();" value="reset" name="">
+		</div>
+
+		<h5 id="text"></h5>
+
+</body>
+</html>
